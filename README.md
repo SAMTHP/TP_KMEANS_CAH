@@ -1,1 +1,2 @@
-# TP_KMEANS_CAH
+# TP K-Means & Arbre de classification
+
