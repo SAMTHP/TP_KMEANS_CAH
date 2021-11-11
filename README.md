@@ -1,26 +1,30 @@
 # TP - Classification automatique
 > Les fichier ```ipynb``` sont dans le dossier notebooks.
 
-### Objectif du TP
+<h2>Objectif du TP</h2>
+
 > Le but du tp est de mettre en pratique un algorithme de classification automatique du type CAH. Ici, il s'agira de regrouper les éléments du dataset en groupes, appelés clusters, afin de faire ressortir les patterns cachés dans le jeu de données en regroupant les éléments qui se ressemblent.
 
-### Description du dataset
+<h2> Description du dataset</h2>
+
 > ```fromage2.txt``` : Ensemble de différents fromages classifiés par leurs propriétés nutritives. Il s'agira donc d'identifier des groupes de fromages homogènes, ayant des caractéristiques similaires
 
 
-### Étapes clés de l'analyse
+<h2> Étapes clés de l'analyse</h2>
+
 - 1 : Chargement et description des données
 - 2 : Centrage et réduction des données
 - 3 : Génération de la matrice des liens
 - 4 : Matérialisation des groupes
 -
 
-### Intérêt d'utiliser jupyter & Anaconda
+<h2> Intérêt d'utiliser jupyter & Anaconda</h2>
+
 >  Jupyter permet d'éditer des visualisations, de les partager et de permettre des modifications interactives du code et de l'ensemble des données partagés
 
-#### BONUS RÉALISÉ - ```KMeans_clusters_fromage2_FOUNOU_Samir.ipynb```
+<h3> BONUS RÉALISÉ - ```KMeans_clusters_fromage2_FOUNOU_Samir.ipynb```</h3>
 
-## 1 - Chargement et description des données
+<h2>1 - Chargement et description des données</h2>
 
 
 ```python
@@ -99,7 +103,7 @@ print(fromage.describe())
     max    35.700000   120.000000  51.000000  
 
 
-## 2 - Centrage et réduction des données
+<h2> 2 - Centrage et réduction des données</h2>
 
 
 ```python
@@ -116,7 +120,7 @@ fromage_cr = preprocessing.scale(fromage)
 > Ici on importe la librairie ```preprocessing``` qui permet d'éffectuer le prétraitement des données qui est la première étape d'apprentissage automatique au cours de laquelle les données brutes sont transformées  en un format utilisable pour mettre en oeuvre des modèles d'apprentissage automatique précis.
 Ensjuite on fait appel à la méthode ```scale()``` qui permet de placer les données sur une seule échelle.
 
-## 3 - Génération de la matrice des liens
+<h2>3 - Génération de la matrice des liens</h2>
 
 
 ```python
@@ -152,7 +156,7 @@ plt.show()
 
 > Ici on construit un dendrogramme qui permet d'illustrer les arrangements de groupes générés par un regroupement ascendant hiérarchique.
 
-## 4 - Matérialisation des groupes
+<h2>4 - Matérialisation des groupes</h2>
 
 
 ```python
@@ -189,7 +193,7 @@ On peut constater qu'à la hauteur t = 7, nous avons 4 familles de fromages qui 
 
 <strong>Remarques :</strong> 
 - IL serait intérressant de pousser l'analyse sur les fromages du groupe violet, afin de segmenter encore plus ces différents types de fromages
-- Il serait opportun aussi, de comparer si ces 4 groupes de fromages représentent les différents clusters (n_clusters=4) trouvés précedemment dans l'algorithme K-Means
+- Il serait opportun aussi, de comparer si ces 4 groupes de fromages représentent les différents clusters (n_clusters=4) générés dans l'algorithme K-Means (BONUS)
 
 <strong>Conclusion :</strong> 
 - Le bon nombre de cluster sur le jeux de données est donc de quatre.
@@ -207,17 +211,20 @@ On peut constater qu'à la hauteur t = 7, nous avons 4 familles de fromages qui 
 # TP - BONUS - KMeans
 
 ### Objectif du TP
+
 > Le but du tp est de mettre en pratique un algorithme de clustering (K-means). Ici, il s'agira de regrouper les éléments du dataset en groupes, appelés clusters, afin de faire ressortir les patterns cachés dans le jeu de données en regroupant les éléments qui se ressemblent.
 
-### Description du dataset
+<h2> Description du dataset</h2>
+
 > ```fromage2.txt``` : Ensemble de différents fromages classifiés par leurs propriétés nutritives. Il s'agira donc d'identifier des groupes de fromages homogènes, ayant des caractéristiques similaires
 
-### Étapes clés de l'analyse
+<h2> Étapes clés de l'analyse</h2>
+
 - 1 : Chargement et description des données
 - 2 : Standardisation
 - 3 : Clustering en 4 groupes
 
-## 1 - Chargement et description des données
+<h2> 1 - Chargement et description des données</h2>
 
 
 ```python
@@ -432,7 +439,7 @@ sns.pairplot(D)
 
 > <strong>Remarque</strong> : On peut voir que des groupes semblent apparaître naturellement. C'est ce que tentera de démontrer la suite du code.
 
-## 2 - Standardisation
+<h2> 2 - Standardisation</h2>
 
 <strong>Objectif de la standardisation</strong> : <br>
 Il est recommandé de normaliser les données, cela permettra par la suite de déterminer plus facilement les clusters (groupes) grâce aux k-means (moyennes) 
@@ -597,7 +604,7 @@ Z.std(axis=0)
 
 
 
-## 3 - Clustering en quatre groupes
+<h2> 3 - Clustering en quatre groupes</h2>
 
 
 ```python
@@ -620,13 +627,6 @@ res = cluster.KMeans(n_clusters=4)
 ```python
 res.fit(Z)
 ```
-
-
-
-
-    KMeans(n_clusters=4)
-
-
 
 > Ici on utilise la méthode ```fit()``` qui permettra d'entraîner le dataset 
 res.predict(Z)
