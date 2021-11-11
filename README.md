@@ -1,5 +1,5 @@
 # TP - Classification automatique
-> Les fichiers  sont présents ```ipynb``` sont dans le dossier notebooks.
+> Les fichier ```ipynb``` sont dans le dossier notebooks.
 
 ### Objectif du TP
 > Le but du tp est de mettre en pratique un algorithme de classification automatique du type CAH. Ici, il s'agira de regrouper les éléments du dataset en groupes, appelés clusters, afin de faire ressortir les patterns cachés dans le jeu de données en regroupant les éléments qui se ressemblent.
